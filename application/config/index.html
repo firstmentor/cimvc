@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>403 Forbidden</title>
+</head>
+<body>
+
+<p>Directory access is forbidden.</p>
+//model load
+		$this->load->model('Userdatabasemodel');
+	    $data['users']=$this->Userdatabasemodel->getdatabase();   //users key 
+		//print_r($data);
+		$this->load->view('users/userdatabase',$data);
+
+</body>
+</html>
+<?php
+//db sub object
+		//q object
+		$this->load->database();
+		$q = $this->db->query("select * from  users");
+		//database query CI
+		//$this->db->select("firstname");
+		//$this->db->where("id",2);
+		//$q= $this->db->get('users');
+		//select * from users where id =1;
+
+		//$result=$q->result(); //result function  array of object milege
+       //echo "<pre>";
+		//print_r($result);
+		//return $q->result();
+
+		return $q->result_array();
+?>		

@@ -1,0 +1,1 @@
+<?php include "layouts/navbar.php"; ?>
